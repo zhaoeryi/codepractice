@@ -14,18 +14,14 @@ package com.codepractice.array;
 public class Remove_Duplicates_from_Sorted_Array {
 
 	public int removeDuplicates(int[] nums) {
-		if (nums.length == 0) {
+		if (nums.length == 0)
 			return 0;
-		}
-
-		int index = 0;
+		int index = 1;
 		for (int i = 1; i < nums.length; i++) {
-			if (nums[index] == nums[i]) {
-				continue;
-			}
-			nums[index++] = nums[i];
+			if (nums[i] != nums[index - 1])
+				nums[index++] = nums[i];
 		}
-		return index + 1;
+		return index;
 	}
 
 	/**
